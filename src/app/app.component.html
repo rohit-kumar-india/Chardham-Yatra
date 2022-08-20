@@ -1,0 +1,187 @@
+<!-- Header Start -->
+<div class="wrapper">
+  <nav>
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon"><span className="navbar-toggler-icon"></span><i class="fas fa-bars"></i></label>
+    <div class="content">
+      <div class="logo"><a href="#">{{title}}</a></div>
+      <ul class="links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li>
+          <a routerLink="/chardham-package" class="desktop-link">Yatra Packages</a>
+          <input type="checkbox" id="show-features">
+          <label for="show-features">Yatra Packages</label>
+          <ul>
+            <li><a routerLink="/chardham-package">Chardham Yatra Package 2022</a></li>
+            <li>
+              <a routerLink="/chardham-helicopter-package" class="desktop-link">Helicopter Packages</a>
+              <input type="checkbox" id="show-items">
+              <label for="show-items">Helicopter Packages</label>
+              <ul>
+                <li><a routerLink="/chardham-helicopter-package">Chardham Yatra by Helicopter</a></li>
+                <li><a routerLink="/kedarnath-helicopter-package">KedarNath Yatra by Helicopter</a></li>
+              </ul>
+            </li>
+            <li><a routerLink="/mysore-package">Mysore Package</a></li>
+            <li><a routerLink="/gujrat-package">Gujrat Package</a></li>
+            <li><a routerLink="/rajasthan-package">Rajasthan Package</a></li>
+            <li><a routerLink="/kerla-package">Kerla Package</a></li>
+            
+          </ul>
+        </li>
+        
+        <li><a routerLink="/contact-us">Contact Us</a></li>
+        <li style="cursor:pointer ;"><a class="book-now" data-bs-toggle="modal" data-bs-target="#myModal">Book Now</a></li>
+      </ul>
+    </div>
+    <label for="show-search" class="search-icon"><i class="fa fa-search" style="color:white ;cursor:pointer;"></i></label>
+    <form action="#" class="search-box">
+      <input type="text" placeholder="Type Something to Search..." required>
+      <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form>
+  </nav>
+</div>
+<!-- Header End -->
+
+<router-outlet></router-outlet>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Book a Tour Package Now!</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #booking="ngForm" (ngSubmit)="onSubmit(booking.value)" class="modal-form">
+          <div class="col-md-12" id="perror_message"></div>
+          <div class="col-md-12" id="perror_loading"></div>
+          <div class="col-md-12">
+            <select id="packageType" ngModel name="packageType" [(ngModel)]="packageType" class="form-control">
+              <option value="">Select Package Type</option>
+              <option value="Yatra Packages">Yatra Packages</option>
+              <option value="Helicopter Packages">Helicopter Packages</option>
+                                
+            </select>
+          </div>
+          <div class="col-md-12">
+            <select id="package" ngModel name="pacakage" [(ngModel)]="package" class="form-control">
+              <option value="">Select Package</option>
+              <option *ngIf="packageType == 'Yatra Packages'">Chardham Yatra Package 2022</option>
+              <option *ngIf="packageType == 'Yatra Packages'">Mysore Package</option>
+              <option *ngIf="packageType == 'Yatra Packages'">Gujrat Package</option>
+              <option *ngIf="packageType == 'Yatra Packages'">Rajasthan Package</option>
+              <option *ngIf="packageType == 'Yatra Packages'">Kerla Package</option>
+              <option *ngIf="packageType == 'Helicopter Packages'">Chardham Yatra by Helicopter</option>
+              <option *ngIf="packageType == 'Helicopter Packages'">KedarNath Yatra by Helicopter</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <input type="text" id="pname" name="name" ngModel class="form-control" placeholder="Name*" required>
+          </div>
+          <div class="col-md-12">
+            <input type="text" id="pphone" name="phone" ngModel class="form-control" placeholder="Mobile*" required>
+          </div>
+          <div class="col-md-12">
+            <input type="text" id="pemail" name="email" ngModel class="form-control" placeholder="Email*" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Check In Date">Check In Date</label>
+            <input type="date" name="Check In Date" ngModel id="pcin" class="form-control mt-no">
+          </div>
+          <div class="col-md-6">
+            <label for="Check In Date">Check Out Date</label>
+            <input type="date" name="Check Out Date" ngModel id="pcout" class="form-control mt-no">
+          </div>
+          <div class="col-md-12">
+            <textarea name="message" ngModel id="pmessage" class="form-control" placeholder="Any Additional Information or Detail About your Trip?"></textarea>
+          </div>
+          <div style="color: red; height:25px; text-align: center;">
+            <div style="color: red;" *ngIf="booking.invalid && booking.touched">Please Fill all the required fields correctly</div>
+            <div style="color: rgb(74, 243, 74);" *ngIf="submitted">Submitted Successfully</div>
+          </div>
+          <div class="col-md-12 text-center">
+            <input type="submit" id="submit" class="btn" [disabled]="booking.invalid" value="Book Now">
+          </div>
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Footer Start -->
+<footer class="bg-dark text-center text-white">
+  <div class="">
+    <div class="mb-4" style="padding:30px;margin-top:30px">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+    <div class="row mb-4">
+      <div class="col-lg-2 col-md-6 mb-4 ">
+        <h5> <a class="text-white" routerLink="/">Home</a></h5>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 ><a class="text-white" routerLink="/about">About</a></h5>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 ><a class="text-white" routerLink="/chardham-package">Chardham Yatra</a></h5>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 ><a class="text-white" routerLink="/chardham-helicopter-package">Chardham Helicopter Yatra</a></h5>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 ><a class="text-white" routerLink="/kedarnath-helicopter-package">KedarNath Helicopter Yatra</a></h5>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        <h5 ><a class="text-white" routerLink="/contact-us">Contact Us</a></h5>
+      </div>
+    </div>
+    <div class="ml-20 mb-4">
+      <p style="margin:30px 100px 30px 100px">
+        {{title}} helps you to plan your trips and provides all the information of the destinations in economical way with wide selection of our various packages which makes your tour easy & happy.
+      </p>
+    </div>
+  </div>
+  
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright: {{title}}. All Rights Reserved!!
+  </div>
+</footer>
+<!-- Footer End -->

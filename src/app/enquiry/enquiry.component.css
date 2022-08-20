@@ -1,0 +1,40 @@
+.form-group{
+    margin-bottom: 10px;
+}
+
+#enquiry 
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+#contaenquiryct td, #enquiry th 
+{
+    border: 1px solid #ddd;
+    text-align: left;
+}
+#enquiry tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
+#enquiry tr:hover 
+{
+    background-color: #ddd;
+}
+
+#enquiry th 
+{
+    font-size: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center !important;
+        background: #FC354C;
+    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
+    background: linear-gradient(to bottom, rgb(249, 4, 4) 0%,rgb(249, 142, 3) 100%);
+    color: white;
+}
+.ebbtn
+{
+    background-color:red;
+    color:#fff;
+    padding:10px 20px;
+}

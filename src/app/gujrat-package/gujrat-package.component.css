@@ -1,0 +1,21 @@
+.top{
+    background: url(../../assets/images/travel.jpg);
+    height: 300px;
+    background-size: cover;
+    color: red;
+}
+.butHolder a{
+    background:red;
+}
+.butHolder{
+    text-align: center;
+}
+.gujrat{
+    font-size: 15px;
+    color: white;
+    background-color:#353131 ;
+}
+.honeymoonpic img{
+    height: 150px;
+    background-size: cover;
+}

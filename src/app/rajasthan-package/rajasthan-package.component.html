@@ -1,0 +1,94 @@
+<section class="top">
+	<div class="container clearfix">
+        <div style="height:80px ;"></div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="page-main-title">
+					<h2>Rajasthan Package</h2>
+                    <hr style="height:4px;border-width:0;color:red;background-color:red;margin-top: 0px;">
+					<ul>
+						<li><a routerLink="/" title="Home"><i class="fa fa-home"></i></a> > Rajasthan Package</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section >
+    <div class="container"> 
+        <div class="row" style="margin-top :30px;">
+            <div class="col-md-9 col-sm-12">
+                    <div class="item">
+                         <img src="assets/images/rajsthan.jpg" width="100%" height="385px">
+                    </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <app-enquiry></app-enquiry>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 m1233" style="margin-top:20px;">
+                <h1 style="text-align: center; background: linear-gradient(to bottom, rgb(249, 4, 4) 0%,rgb(249, 142, 3) 100%);color: white;">Rajasthan Package</h1>
+                <p>
+                    Rajasthan is a state in northern India. The state covers an area of 342,239 square kilometres (132,139 sq mi) or 10.4 percent of the total geographical area of India. It is the largest Indian state by area and the seventh largest by population. Rajasthan is located on the northwestern side of India, where it comprises most of the wide and inhospitable Thar Desert (also known as the "Great Indian Desert") and shares a border with the Pakistani provinces of Punjab to the northwest and Sindh to the west, along the Sutlej-Indus river valley. It is bordered by five other Indian states: Punjab to the north; Haryana and Uttar Pradesh to the northeast; Madhya Pradesh to the southeast; and Gujarat to the southwest. Its geographical location is 23.3 to 30.12 North latitude and 69.30 to 78.17 East longitude, with the Tropic of Cancer passing through southernmost tip of the state.                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="margin-bottom:50px;">
+    <div class="container"> 
+        <div class="row">
+                <div class="col-md-3" style="margin-bottom:20px;" *ngFor="let p of packages">
+                    <div style="border: 2px solid rgb(240, 59, 59); padding: 5px; box-shadow: 0 0 15px #f78888;">
+                        <div class="honeymoonpic">
+                            <img src="assets/images/{{p.pic}}.jpg" width="100%" height="150px">
+                        </div>
+                        <div>
+                            <table class="table table-bordered rajasthan" >
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2" style="color:whitesmoke;background-color: red;">{{p.name}}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Duration</td>
+                                        <td>{{p.duration}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Starting</td>
+                                        <td style="color:red">{{p.price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cover</td>
+                                        <td style="font-size: 11px;">{{p.cover}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Catagory</td>
+                                        <td>FD (Min 2 Person)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td style="font-size: 11px;">Standard Package, Deluxe Package, Luxury Package</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FD Date</td>
+                                        <td><marquee style="background: linear-gradient(to bottom, rgb(255, 255, 255) 0%,rgb(164, 232, 195) 100%);color: red;">Book Now For Get Extra Discount</marquee></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                                <div class="butHolder" ><a href="tel:{{phone}}" class="m-btn m-btn-theme section-proposition-btn btn btn-b mt-btn btn-msg" style="margin:10px;color:#fff"><i class="fa fa-phone" aria-hidden="true"></i> Call Now</a></div>
+                                            	
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                            </div>
+    </div>
+</section>

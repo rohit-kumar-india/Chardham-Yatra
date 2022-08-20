@@ -1,0 +1,17 @@
+.top{
+    background: url(../../assets/images/travel.jpg);
+    height: 300px;
+    background-size: cover;
+    color: red;
+}
+.butHolder a{
+    background:red;
+}
+.butHolder{
+    text-align: center;
+}
+.kedarnath{
+    font-size: 15px;
+    color: white;
+    background-color:#353131 ;
+}

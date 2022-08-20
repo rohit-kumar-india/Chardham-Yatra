@@ -1,0 +1,6 @@
+.top{
+    background: url(../../assets/images/travel.jpg);
+    height: 300px;
+    background-size: cover;
+    color: red;
+}
